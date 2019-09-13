@@ -2,17 +2,18 @@ import random
 
 def randomList(u):
     a = []
-    length = random.randint(5,30)
-    for i in range(length):
-        b = random.randint(0,1000)
+    length = int(input('how long do you want your list?: '))
+    for bruh in range(length - 1):
+        b = random.randint(1,length)
         if u:
-            if b not in a:
-                a.append(b)
+            while b in a:
+                b = random.randint(0,length)
+            a.append(b)
         else:
             a.append(b)
     return(a)
 
-
+l = []
 item = 'seven'
 
 while True:
@@ -20,31 +21,39 @@ while True:
 
     if a == "create":
         l = []
+        print('empty list has been created')
     elif a == "fill":
         l = randomList(False)
         print(l)
-    if l in globals():
-        if l != []:
-            if a == "sort":
-                l = l.sort()
-                print(l)
-            elif a == "scramble":
-                random.shuffle(l)
-                print(l)
-            elif a == "print":
-                print(l)
-            elif a == "search":
-                while item not in l:
-                    item = input("what number would you like to search for?: ")
-                    if item not in l:
-                        input("item is not in the list, try again.")
-                print(item + ' is in position ' + l.index(item))
-            elif a == "count":
-                while item not in l:
-                    item = input("what number would you like to count?: ")
-                    if item not in l:
-                        input("item is not in the list, try again.")
-                print(item + ' is in the list ' + list.count(item) + ' times.')
+    elif a == "unique":
+        l = randomList(True)
+        print(l)
+    elif a == "quit":
+        print('program has quit')
+        break
+    elif l != []:
+        if a == "sort":
+            l = sorted(l)
+            print(l)
+        elif a == "scramble":
+            random.shuffle(l)
+            print(l)
+        elif a == "print":
+            print(l)
+        elif a == "search":
+            while item not in l:
+                item = input("what number would you like to search for?: ")
+                if item not in l:
+                    input("item is not in the list, try again.")
+            print(item + ' is in position ' + l.index(item))
+        elif a == "count":
+            while item not in l:
+                item = input("what number would you like to count?: ")
+                if item not in l:
+                    input("item is not in the list, try again.")
+            print(item + ' is in the list ' + list.count(item) + ' times.')
+    else:
+        print("your input isn't valid, try again.")
 
         
         
