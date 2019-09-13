@@ -3,10 +3,10 @@ import random
 def randomList(u):
     a = []
     length = int(input('how long do you want your list?: '))
-    for bruh in range(length - 1):
-        b = random.randint(1,length)
-        if u:
-            while b in a:
+    for bruh in range(length - 1): #within length - 1
+        b = random.randint(1,length) #random integer between 1 and length
+        if u: #if unique
+            while b in a: #generate new int if current already exists
                 b = random.randint(0,length)
             a.append(b)
         else:
@@ -45,13 +45,13 @@ while True:
                 item = input("what number would you like to search for?: ")
                 if item not in l:
                     input("item is not in the list, try again.")
-            print(item + ' is in position ' + l.index(item))
+            print(item + ' is in index ' + l.index(item)) #index of item
         elif a == "count":
             while item not in l:
                 item = input("what number would you like to count?: ")
                 if item not in l:
                     input("item is not in the list, try again.")
-            print(item + ' is in the list ' + list.count(item) + ' times.')
+            print(item + ' is in the list ' + list.count(item) + ' times.') #number of occurences of item
     else:
         print("your input isn't valid, try again.")
 
