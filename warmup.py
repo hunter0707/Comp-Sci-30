@@ -3,11 +3,11 @@ import random
 def randomList(u):
     a = []
     length = int(input('how long do you want your list?: '))
-    for bruh in range(length - 1): #within length - 1
+    for i in range(length): #within length - 1
         b = random.randint(1,length) #random integer between 1 and length
         if u: #if unique
             while b in a: #generate new int if current already exists
-                b = random.randint(0,length)
+                b = random.randint(1,length)
             a.append(b)
         else:
             a.append(b)
