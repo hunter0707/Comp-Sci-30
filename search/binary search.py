@@ -1,21 +1,39 @@
+import random
+
 n = []
-for i in range(random.randint(100,200)):
-    n.append(random.randint(1, 300))
 
-print(n)
+for i in range(random.randint(30,50)):
+    r = random.randint(1,250)
+    if r not in n:
+        n.append(r)
 
-f = int(input("what number would you like to search for?: "))
+random.shuffle(n)
 
-def binarySearch(n,f):
-    l = len(n)
-    for i in range(l): #while in range of len of list
+for i in range(len(n)): #while in range of len of list
         current = int(n[i]) #starts at 0th then goes up
         for b in range(i,-1,-1): #counts from i to 0, steps is -1 therefore counting down
             if current < int(n[b]): #if less then n[b]
                 n.insert(b,current)      
                 del n[b+2]
-    for i in range(l):
-        l = l / 2
-        if f = n[l]:
-            
-            
+print(n)
+
+f = int(input("what number would you like to search for?: "))
+
+def binarySearch(n,f):
+    notfound = True
+    end = len(n) #len - 1 is index of last term
+    start = 0 #index of first item
+    while notfound:
+        l = round((start + end) / 2) #average of start and end is middle
+        print('start:', start, 'end:', end, 'l:', l, 'n[l]:', n[l])
+        if f == n[l]:
+            notfound = False
+        elif f > n[l]:
+            start = l #new start at l
+        elif f < n[l]:
+            end = l #new ending at l
+        if end - start <= 2 and f == n[l]:
+            return(str(f), ' not in list')
+    return(str(f) + ' found at index ' + str(l))
+
+print(binarySearch(n,f))
