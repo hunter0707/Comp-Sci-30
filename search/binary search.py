@@ -2,7 +2,7 @@ import random
 
 n = []
 
-for i in range(random.randint(30,50)):
+for i in range(random.randint(50,100)):
     r = random.randint(1,250)
     if r not in n:
         n.append(r)
@@ -25,15 +25,15 @@ def binarySearch(n,f):
     start = 0 #index of first item
     while notfound:
         l = round((start + end) / 2) #average of start and end is middle
-        print('start:', start, 'end:', end, 'l:', l, 'n[l]:', n[l])
+        print('from', start, 'to', end, '| index =', l, '| n[l] =', n[l])
         if f == n[l]:
             notfound = False
         elif f > n[l]:
             start = l #new start at l
         elif f < n[l]:
             end = l #new ending at l
-        if end - start <= 2 and f == n[l]:
-            return(str(f), ' not in list')
+        if end - start == 1 and f != n[l]: #if start and end is within 1 of each other and current index is not f
+            return(str(f) + ' not in list')
     return(str(f) + ' found at index ' + str(l))
 
 print(binarySearch(n,f))
