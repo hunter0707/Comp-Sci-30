@@ -11,20 +11,19 @@ def cocktailSort(n):
         l = len(n)
         
         for i in range(hl):
-            unsorted = False        
-            for a in range(i, l-1):
+            unsorted = False       
+            for a in range(i, l-1): #forward, goes from i to length, 
                 if n[a] > n[a+1]: #if current greater then next
                     n[a], n[a+1] = n[a+1], n[a] #swap places
                     unsorted = True
                     r += 1
-            for b in range(l-1, i, -1):
+            for b in range(l-1, i, -1): #backwards, goes from length - 1 to i
                 if n[b] < n[b-1]:
                     n[b], n[b-1] = n[b-1], n[b]
                     unsorted = True
                     r += 1
-            l -= 1
-            if unsorted == False:
+            l -= 1 #i increases while l decreases, thereby only running through the unsorted parts of the list
+            if unsorted == False: #no changes
                 return r
-        return r
 
 print(cocktailSort(n))
