@@ -23,17 +23,21 @@ def makeLand():
     return land
 
 def countWater(land):
-    land = land.replace('|',' ')
-    land = land.split()
-    land = [int(i) for i in land]
+    land = land.replace('|',' ') #replace all | with spaces so it can be split
+    land = land.split() #convert the array into a list of numbers
+    land = [int(i) for i in land] #convert all numbers in list into integers
     print('all land: ', land)
     water = []
+    volume = 0
     for i in land:
-        if land[i] > 0:
-            water.append(land[i])
+        if land[i] > 0: #if current square is greater then 0 then it contains water
+            water.append(land[i]) 
     print('all water: ', water)
+    for i in water:
+        volume += water[i] #sum of all squares with water
+    return('total volume of water is ' + str(volume) + ' kiloliters.') #m^3 = kL
 
 land = makeLand()
 print(land)
-countWater(land)
+print(countWater(land))
 
