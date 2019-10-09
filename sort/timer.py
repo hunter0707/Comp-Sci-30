@@ -1,11 +1,6 @@
 import random
 import time
 
-n = []
-for i in range(0,5000,1):
-        n.append(i)
-random.shuffle(n)
-
 def bubbleSort(n):
         #print(n)
         unsorted = True
@@ -81,13 +76,22 @@ def selectionSort(n):
         n[i], n[mindex] = n[mindex], n[i] #swap places
     return n
 
+n = []
+lists = 5
+ints = 2000
+for i in range(0,ints,1):
+        n.append(i)
+random.shuffle(n)
+
 sorters = [bubbleSort, cocktailSort, gnomeSort, insertionSort, selectionSort]
+
+print(lists, 'lists... each with', ints, 'integers... which sorting algorithm comes out top?')
 
 for i in range(len(sorters)):
     tt = 0
     longest = 0
     shortest = 10
-    for a in range(100):
+    for a in range(lists):
         random.shuffle(n) #reshuffle list
         time_start = time.time() #begin timer
         sorters[i](n) #runs sorter
@@ -97,6 +101,5 @@ for i in range(len(sorters)):
         elif time_taken < shortest: #new shortest time
             shortest = time_taken
         tt += time_taken #total time taken
-    at = tt/20 # 
-
-    print(sorters[i], "average time taken to sort 100 unique list 5000 long = ", at, 'longest time = ', longest, 'shortest time = ', shortest)
+    at = tt/lists #average time
+    print(sorters[i],"total time = ", tt, ", average time = ", at, ', longest time = ', longest, ', shortest time = ', shortest)
