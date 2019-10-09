@@ -10,7 +10,11 @@ play = True
 while play:
     l = 1
     while l < 2 or l > 50: 
-        l = int(input('Enter a square side size from 2 to 50 or 0 to quit: '))
+        l = input('Enter a square side size from 2 to 50 or 0 to quit: ')
+        if l == '': #you can't int '' so i had to do this
+            l = 1
+        else:
+            l = int(l)
         if l == 0:
             print('thanks for playing')
             play = False
