@@ -14,8 +14,8 @@ while makeChair:
     material = input('What should the chair be made of?: ')
     legs = input('how many legs does the chair have?: ')
     price = input('how much should the chair cost?: ')
-    chairs = []
     
+    #default
     if color == '':
         color = 'brown'
     if material == '':
@@ -25,9 +25,9 @@ while makeChair:
     if legs == '':
         legs = '4'
 
-    chairs.append(chair(color,material,legs,price))
-    for i in chairs:
-        i.printChair()
+    c = chair(color,material,legs,price) #c = the class chair
+    c.printChair()
+
     p = input('play again?: ')
     if p == 'no':
-        makeChair = False
+        makeChair = False #stop playing

@@ -76,30 +76,35 @@ def selectionSort(n):
         n[i], n[mindex] = n[mindex], n[i] #swap places
     return n
 
-n = []
-lists = 5
-ints = 2000
-for i in range(0,ints,1):
-        n.append(i)
-random.shuffle(n)
+while True:
+    n = []
+    lists = int(input('how many lists: '))
+    ints = int(input('how long are lists: '))
+    for i in range(0,ints,1):
+            n.append(i)
 
-sorters = [bubbleSort, cocktailSort, gnomeSort, insertionSort, selectionSort]
+    sorters = [bubbleSort, cocktailSort, gnomeSort, insertionSort, selectionSort]
 
-print(lists, 'lists... each with', ints, 'integers... which sorting algorithm comes out top?')
+    print(lists, 'lists... each with', ints, 'integers... which sorting algorithm comes out top?')
 
-for i in range(len(sorters)):
-    tt = 0
-    longest = 0
-    shortest = 10
-    for a in range(lists):
-        random.shuffle(n) #reshuffle list
-        time_start = time.time() #begin timer
-        sorters[i](n) #runs sorter
-        time_taken = time.time() - time_start #end timer
-        if time_taken > longest: #new longest time
-            longest = time_taken
-        elif time_taken < shortest: #new shortest time
-            shortest = time_taken
-        tt += time_taken #total time taken
-    at = tt/lists #average time
-    print(sorters[i],"total time = ", tt, ", average time = ", at, ', longest time = ', longest, ', shortest time = ', shortest)
+    for i in range(len(sorters)):
+        tt = 0
+        longest = 0
+        shortest = 10
+        time_start = time.time()
+        sorters[i](n)
+        sorted_time = time.time() - time_start #time for sorted list
+        for a in range(lists):
+            #random.shuffle(n) #reshuffle list
+            time_start = time.time() #begin timer
+            sorters[i](n) #runs sorter
+            time_taken = time.time() - time_start #end timer
+            if time_taken > longest: #new longest time
+                longest = time_taken
+            if time_taken < shortest: #new shortest time
+                shortest = time_taken
+            tt += time_taken #total time taken
+        at = tt/lists #average time
+        print(sorters[i],"total time = ", tt, ", average time = ", at)
+        print('longest time = ', longest, ', shortest time = ', shortest, ', sorted time = ', sorted_time)
+        print('')
