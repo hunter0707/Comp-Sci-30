@@ -1,5 +1,5 @@
 import random
-
+   
 def makeLand():
     l = random.randint(3,22) #length
     w = random.randint(3,22) #width

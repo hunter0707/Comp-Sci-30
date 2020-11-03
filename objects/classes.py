@@ -10,4 +10,4 @@ myStudents.append(students('Adam', 10))
 myStudents.append(students('name', 1))
 
 for i in myStudents:
-    i.printStudent()
+    i.printStudent()   

@@ -16,7 +16,7 @@ def randomList(u):
 l = []
 item = 'seven'
 
-while True:
+while True:    
     a = input("enter one of the following commands: create, fill (with random values), sort (from smallest to largest), scramble (shuffle list), print, search, count, unique (fill list with unique values), quit: ")
 
     if a == "create":

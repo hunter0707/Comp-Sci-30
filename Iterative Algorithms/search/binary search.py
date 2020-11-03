@@ -17,7 +17,7 @@ for i in range(len(n)): #while in range of len of list
                 del n[b+2]
 print(n)
 
-f = int(input("what number would you like to search for?: "))
+f = int(input("what number would you like to search for?: "))     
 
 def binarySearch(n,f):
     notfound = True

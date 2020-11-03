@@ -23,7 +23,7 @@ class elevator:
     def SMToggle(self): #service mode toggle
         if self.serviceMode:
             self.serviceMode = False
-        else:
+        else:  
             self.serviceMode = True
 
 class smartElevator(elevator):

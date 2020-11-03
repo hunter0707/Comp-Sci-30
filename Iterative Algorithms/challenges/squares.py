@@ -6,7 +6,7 @@ def drawSquare(l):
             print(' * ' + ('   ' * (l-2)) + ' *') #everything in between, print * on 2 sides and spaces in the middle
         
 play = True
-
+ 
 while play:
     l = 1
     while l < 2 or l > 50: 

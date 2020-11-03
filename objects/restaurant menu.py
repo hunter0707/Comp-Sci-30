@@ -26,7 +26,7 @@ menuItems.append(menu('Fries', 'Freshly sliced potatoes, fried in canola oil to 
 menuItems.append(menu('Caesar Salad', 'A salad of romaine lettuce and croutons, in a light caesar dressing', False, 13.99))
 menuItems.append(menu('Fish and Chips', 'Freshly battered cod and freshly sliced potatoes fried served with coleslaw', False, 22.5))
 
-for i in menuItems:
+for i in menuItems:   
     i.printMenu()
 
 input('procedural')

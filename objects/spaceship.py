@@ -70,7 +70,7 @@ def launch(ship):
         print(ship)
         if ship.location == ship.destination:
             notarrived = False #loop break
-            time.sleep(0.5)
+            time.sleep(0.5)   
             print1(ship.name + ' has arrived at Jupiter!',0.07)
             time.sleep(1)
     print('') #break flush

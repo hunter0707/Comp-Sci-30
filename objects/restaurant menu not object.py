@@ -8,4 +8,4 @@ for i in range(10):
     print('Description: ' + menuDescriptions[i])
     print('Gluten Free: ' + str(glutenFree[i]))
     print('Price: $' + str(menuPrices[i]))
-    print('')
+    print('')   

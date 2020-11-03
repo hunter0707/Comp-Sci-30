@@ -22,5 +22,5 @@ def cocktailSort(n):
         if unsorted == False: #no changes, i.e. sorted
             return r
     return r
-
+   
 print(cocktailSort(n))

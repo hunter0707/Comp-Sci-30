@@ -15,7 +15,7 @@ def linearSearch(n,f):
         print(str(f) + ' found at index ' + str(indicies)[1:-1]) #removes square brackets
 
 print(n)
-
+   
 f = int(input("what number would you like to search for?: "))
 
 linearSearch(n,f)

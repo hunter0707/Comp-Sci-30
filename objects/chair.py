@@ -20,7 +20,7 @@ while makeChair:
         color = 'brown'
     if material == '':
         material = 'wood'
-    if price == '':
+    if price == '':   
         price = '0'
     if legs == '':
         legs = '4'

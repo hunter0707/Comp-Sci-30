@@ -17,7 +17,7 @@ def cocktailSort(n):
     r = 0 #goes up per swap
     l = len(n)
     i = 0 #goes up per while loop
-    unsorted = True
+    unsorted = True   
     while unsorted:
         unsorted = False #stays false unless sorted
         for a in range(i, l-1): #forward, goes from i to length, 

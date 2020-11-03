@@ -12,4 +12,4 @@ def insertionSort(n):
         print(n, 'run', i+1)
     return n
 
-print(insertionSort(n), 'finished')
+print(insertionSort(n), 'finished')   

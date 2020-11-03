@@ -30,7 +30,7 @@ class hero:
         else:
             print(item.name + ' is not in your bag!')
     def attack(self,weapon):
-        rdmg = random.randint(1,10)
+        rdmg = random.randint(1,10)    
         try:
             dmg = weapon.power + rdmg
         except:

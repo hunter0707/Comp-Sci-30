@@ -33,7 +33,7 @@ def digsum(n):
         return n #less than 10 means the sum is the same
     else:
         return n%10 + digsum(int(n/10)) #removes last digit and adds each time
-
+   
 #print(digsum(int(input('sum of digits: '))))
 
 #7

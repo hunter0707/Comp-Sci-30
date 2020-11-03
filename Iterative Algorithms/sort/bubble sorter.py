@@ -14,5 +14,5 @@ def bubbleSort(n):
                                 n[a], n[a+1] = n[a+1], n[a] #swap places
                                 unsorted = True #if change is made, list isn't sorted
         return n
-   
+      
 print(bubbleSort(n), 'finished')

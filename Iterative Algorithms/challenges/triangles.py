@@ -7,7 +7,7 @@ def drawTriangles(l):
         else: #all else is * spaces *
             print(sf + t) #front spacing + t
 play = True
-
+ 
 while play:
     l = 1
     while l < 2 or l > 25: 

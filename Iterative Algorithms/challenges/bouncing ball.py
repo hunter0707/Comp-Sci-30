@@ -14,4 +14,4 @@ def bounceBall(max,min):
         print('Bounce ' + str(n) + ': ' + str(max)) #prints which bounce its on
     return(str(n) + ' bounces.') #returns number of bounces
 
-print(bounceBall(max,min))
+print(bounceBall(max,min)) 

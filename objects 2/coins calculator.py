@@ -31,7 +31,7 @@ def countcoins(ucoins,coins):
     ulist = []
     counted = ''
     for i in range(len(coins)):
-        uname = coins[i].name
+        uname = coins[i].name   
         uses = ucoins.count(uname) #number of occurences of current coin
         if uses > 0:
             if uses > 1: #plural if > 1

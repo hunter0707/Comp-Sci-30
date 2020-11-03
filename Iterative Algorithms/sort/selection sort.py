@@ -13,4 +13,4 @@ def selectionSort(n):
         n[i], n[mindex] = n[mindex], n[i] #swap places
     return n
 
-print(selectionSort(n), 'finished')
+print(selectionSort(n), 'finished')   

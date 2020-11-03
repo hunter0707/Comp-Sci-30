@@ -31,7 +31,7 @@ class rectangle:
         return pygame.Rect(self.xpos,self.ypos,self.w,self.h)
     def move(self):
         if self.xpos >= ww - self.w or self.xpos <= self.a:
-            self.xd *= -1 #direction change at window edge
+            self.xd *= -1 #direction change at window edge   
         if self.ypos >= wh - self.h or self.ypos <= self.b:
             self.yd *= -1 #direction change at window edge
         self.xpos += self.xd
@@ -79,11 +79,11 @@ class circle(rectangle):
         self.w = random.randint(25,50)
         self.h = self.w
         self.a = self.w
-        self.b = self.a
+        self.b = self.a 
     def draw(self):
         pygame.draw.circle(window,self.color,[round(self.xpos),round(self.ypos)],self.w)
 
-class player(rectangle):
+class player(rectangle):   
     def __init__(self):
         rectangle.__init__(self)
         self.w = 50
